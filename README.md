@@ -1,7 +1,5 @@
 # Tests y refactoring - Practicas
 
-## Ejercicios - 1
-
 Crea los tests unitarios para las funciones:
 
 - `calificarPelicula()`
