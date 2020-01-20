@@ -43,6 +43,7 @@ Esta funcion valida que el objeto "pelicula" tenga todos los datos necesario/obl
 - el campo `img` es un `string` con el formato url (tip: https://www.regextester.com/94502)
 - el campo `title` es un `string` que debe tener un lenght de al menos dos caracteres.
 - el campo `year` es un `string` que solo debe contener numeros.
+- el campo `rating` es un `string` que solo debe contener numeros de puto flotante o enteros.
 - el campo `tags` es un `array` que contiene uno o varios `objetos` con el formato: `{ name: "tag_name" }`
 - el campo `description` es un `string` que debe tener un lenght de al menos 50 caracteres.
 

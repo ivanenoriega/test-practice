@@ -1,5 +1,11 @@
 function calificarPelicula(pelicula) {
-  console.log(pelicula);
+  if (parseFloat(pelicula.rating) > 8.5) {
+    return "buena";
+  } else if (parseFloat(pelicula.rating) > 6) {
+    return "normal";
+  } else {
+    return "mala";
+  }
 }
 
 function crearPeliculaenHtmlConJquery(movie) {
@@ -21,13 +27,44 @@ function crearPeliculaenHtmlConJquery(movie) {
 }
 
 function formatearMovieTagsToString(data) {
-  console.log(data);
+  let tagsformateadas = "";
+  for (let index = 0; index < data.tags.length; index++) {
+    const element = data.tags[index];
+    if (index === 0) {
+      tagsformateadas = element.name;
+    } else {
+      tagsformateadas += ", " + element.name;
+    }
+  }
+  return tagsformateadas;
 }
 
 function validarSiEsNuevaPelicula(date) {
-  console.log(date);
+  if (date.year > 2017) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function comprobarDatosObligatorios(peli) {
-  console.log(peli);
+  if (peli.title.length < 2 || typeof peli.title !== "string") {
+    return false;
+  }
+  if (typeof peli.img !== "string") {
+    return false;
+  }
+  if (typeof peli.rating !== "string" && /^[0-9]+$/.test(peli.rating)) {
+    return false;
+  }
+  if (typeof peli.year !== "string" && /^[0-9]+$/.test(peli.rating)) {
+    return false;
+  }
+  if (!Array.isArray(peli.tags)) {
+    return false;
+  }
+  if (peli.description.length < 50 || typeof peli.description !== "string") {
+    return false;
+  }
+  return true;
 }
