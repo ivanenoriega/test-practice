@@ -19,8 +19,8 @@ Esta funcion debe calificar a una pelicula como buena, normal o mala en base a s
 - `calificarPelicula({rating: "10"})` debe retornar: `"buena"`
 - `calificarPelicula({rating: "7"})` debe retornar: `"normal"`
 - `calificarPelicula({rating: "2"})` debe retornar: `"mala"`
-- `calificarPelicula({rating: "1....1"})` debe retornar: `"null"`
-- `calificarPelicula({rating: ""})` debe retornar: `"null"`
+- `calificarPelicula({rating: "1....1"})` debe retornar: `null`
+- `calificarPelicula({rating: ""})` debe retornar: `null`
 - `calificarPelicula({rating: "asdawda"})` debe retornar: `null`
 
 ### funcion validarSiEsNuevaPelicula:
@@ -33,7 +33,7 @@ Esta funcion debe validar si la pelicula ingresada por parametro es "nueva" o no
 - `validarSiEsNuevaPelicula({year: "2018"})` debe retornar: `true`
 - `validarSiEsNuevaPelicula({year: "1998"})` debe retornar: `false`
 - `validarSiEsNuevaPelicula({year: "2021"})` debe retornar: `null`
-- `validarSiEsNuevaPelicula({year: "asdwad"})` debe retornar: `"null"`
+- `validarSiEsNuevaPelicula({year: "asdwad"})` debe retornar: `null`
 - `validarSiEsNuevaPelicula({year: "2019dasd"})` debe retornar: `null`
 
 ### funcion comprobarDatosObligatorios:
@@ -69,8 +69,8 @@ Crea las validaciones que creas necesarias para esta funcionalidad.
 - `formatearMovieTagsToString({ tags: [{name: "tag1"}, {name: "tag2"}, {name: "tag3"}]})` debe retornar: `"tag1, tag2, tag3"`
 - `formatearMovieTagsToString({ tags: [{name: "tag1"}, {name: "tag2"}]})` debe retornar: `"tag1, tag2,"`
 - `formatearMovieTagsToString({ tags: [{name: "tag1"}]})` debe retornar: `"tag1"`
-- `formatearMovieTagsToString({ tags: [{names: "tag1"}, {names: "tag2"}, {names: "tag3"}]})` debe retornar: `"null"`
-- `formatearMovieTagsToString({ tags: ["tag1"]})` debe retornar: `"null"`
+- `formatearMovieTagsToString({ tags: [{names: "tag1"}, {names: "tag2"}, {names: "tag3"}]})` debe retornar: `null`
+- `formatearMovieTagsToString({ tags: ["tag1"]})` debe retornar: `null`
 
 ### funcion crearPeliculaenHtmlConJquery:
 
