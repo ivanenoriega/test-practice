@@ -1,4 +1,4 @@
-# Tests y refactoring - Practicas
+# Tests y refactoring - Práctica
 
 Crea los tests unitarios para las funciones:
 
@@ -41,7 +41,7 @@ Esta funcion valida que el objeto "pelicula" tenga todos los datos necesario/obl
 - el campo `img` es un `string` con el formato url (tip: https://www.regextester.com/94502)
 - el campo `title` es un `string` que debe tener un lenght de al menos dos caracteres.
 - el campo `year` es un `string` que solo debe contener numeros.
-- el campo `rating` es un `string` que solo debe contener numeros de puto flotante o enteros.
+- el campo `rating` es un `string` que solo debe contener numeros de punto flotante o enteros.
 - el campo `tags` es un `array` que contiene uno o varios `objetos` con el formato: `{ name: "tag_name" }`
 - el campo `description` es un `string` que debe tener un lenght de al menos 50 caracteres.
 
@@ -77,7 +77,7 @@ Esta funcion debe formatear la informacion de la pelicula para renderizarla post
 
 ```
 <li class="movie">
-  <img class="movie__image" src="movie_img" alt="" />
+  <img class="movie__image" src="movie_img" alt="movie_title image" />
   <div class="movie__summary">
     <div>
       <h2 class="movie__title">movie_title</h2>
@@ -89,7 +89,7 @@ Esta funcion debe formatear la informacion de la pelicula para renderizarla post
         src="https://img.icons8.com/plasticine/2x/star--v1.png"
         alt=""
       /><span class="movie__rate">movie_rating</span
-      ><span class="genre"> movie_tags + '</span>
+      ><span class="genre">movie_tags</span>
     </div>
     <p class="movie__description">movie_description</p>
   </div>
@@ -99,3 +99,34 @@ Esta funcion debe formatear la informacion de la pelicula para renderizarla post
 #### Validaciones:
 
 Crea las validaciones que creas necesarias para esta funcionalidad.
+
+# TDD - Practicas
+
+Analiza los requerimientos para las nuevas "features" de nuestra aplicacion e implementa TDD.
+
+### Analiza los requerimientos y crea sus correspondientes tests (RED):
+
+#### 1) Modela una clase "pelicula" que en su metodo contructor tome la informacion de las peliculas alojadas en movies.js y devuelva un objeto con los siguientes atributos y metodos:
+
+**Atributos:**
+- `title`: titulo de la pelicula.
+- `img`: url hacia la imagen de la pelicula.
+- `rating`: clasificacion de la pelicula.
+- `year`: año de la pelicula.
+- `tags`: array con los tags de las peliculas.
+- `description`: descripcion de la pelicula.
+
+**Metodos:**
+- `getHTML()`: devuelve la informacion en formato HTML con la estructura definida en `crearPeliculaenHtmlConJquery()`.
+- `getTags()`: devuelve los tags de la pelicula en formato string y separadas por coma. Ver ejemplo en `formatearMovieTagsToString()`.
+- `getRating()`: devuelve la clasificacion de la pelicula como buena, mala o normal. Ver bases en `calificarPelicula()`.
+
+#### 2)Crea las siguientes funciones: 
+- `getMovies()`: Deberia tomar la variable movies y devolver un array con objetos de la clase "pelicula". (usar el metodo map)
+- `filtrarPorEtiqueta()`: esta funcion deberia filtrar un array de peliculas y devolver un array con peliculas que tengan los tags determinados. (usar el metodo filter)
+- `filtrarPorTitulo()`: esta funcion deberia filtrar un array de peliculas y devolver un array con peliculas que tengan un titulo similar al ingresado. (usar el metodo filter y expresiones regulares)
+- `filtrarPorRating()`: esta funcion deberia filtrar un array de peliculas y devolver un array con peliculas in rating igual al ingresado (bueno, normal o malo). (usar el metodo filter)
+
+### Crea la funcionalidad para completar los tests(GREEN):
+
+### Analiza el codigo y realiza los cambios que consideres necesarios (REFACTOR):
