@@ -1,4 +1,5 @@
 function calificarPelicula(pelicula) {
+  if (isNaN(pelicula.rating) || pelicula.rating === "") return null
   if (parseFloat(pelicula.rating) > 8.5) {
     return "buena";
   } else if (parseFloat(pelicula.rating) > 6) {
@@ -27,19 +28,27 @@ function crearPeliculaenHtmlConJquery(movie) {
 }
 
 function formatearMovieTagsToString(data) {
-  let tagsformateadas = "";
-  for (let index = 0; index < data.tags.length; index++) {
-    const element = data.tags[index];
-    if (index === 0) {
-      tagsformateadas = element.name;
-    } else {
-      tagsformateadas += ", " + element.name;
+  if (typeof data.tags[0] === 'object' && data.tags[0].hasOwnProperty('name')) {
+    let tagsformateadas = "";
+    for (let index = 0; index < data.tags.length; index++) {
+      const element = data.tags[index];
+      if (index === 0) {
+        tagsformateadas = element.name;
+      } else {
+        tagsformateadas += ", " + element.name;
+      }
     }
+    return tagsformateadas;
+  } else {
+    return null
   }
-  return tagsformateadas;
 }
 
 function validarSiEsNuevaPelicula(date) {
+  var fecha = new Date().getFullYear();
+  if(date.year > fecha || isNaN(date.year)){
+    return null
+  }
   if (date.year > 2017) {
     return true;
   } else {
